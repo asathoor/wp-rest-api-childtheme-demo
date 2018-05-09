@@ -14,4 +14,6 @@ If you create a page and add the div in text-mode, the content will load there. 
 
 ## Parent Theme
 
+Since this is a child theme you may want to install it's parent, here it is:
+
 * [Underscores-and-SASS](https://github.com/asathoor/underscores-and-sass)
