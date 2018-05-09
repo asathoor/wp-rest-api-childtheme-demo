@@ -28,9 +28,10 @@ let someposts = 'http://localhost:8888/wordpress/wp-json/wp/v2/pages';
             },
             success: function( response ) {
     	
-                console.log( response ); // server response
+                // show the response object in the console
+                console.log( response );
                 
-                // if there's only one result you can:
+                // tip: if there's only one result you can:
                 // console.log( response.title.rendered )
         
                 /**
@@ -41,6 +42,7 @@ let someposts = 'http://localhost:8888/wordpress/wp-json/wp/v2/pages';
                     // test
 				    console.log( response );
                     
+                    // in the markup a div with the id=rest is expected
 				    $('#rest').append( '<div><h2>' 
 					    + response[i].title.rendered 
 					    + '</h2>' 
