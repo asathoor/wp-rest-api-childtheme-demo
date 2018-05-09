@@ -19,27 +19,26 @@ function orbisius_ct_rest_abracadabra_child_theme_enqueue_styles() {
     $parent_style = 'orbisius_ct_rest_abracadabra_parent_style';
     $parent_base_dir = 'underscores-and-sass';
 
+    // here we load the parent style.css
     wp_enqueue_style( $parent_style,
         get_template_directory_uri() . '/style.css',
         array(),
         wp_get_theme( $parent_base_dir ) ? wp_get_theme( $parent_base_dir )->get('Version') : ''
     );
 
+    // here we load the child theme style.css
     wp_enqueue_style( $parent_style . '_child_style',
         get_stylesheet_directory_uri() . '/style.css',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
     
-    // the REST API JavaScript
+    // ---> here we load the REST API JavaScript
     wp_enqueue_script( 
         'REST-js', 
         get_stylesheet_directory_uri() . '/js/js.js' 
     );
 }
 
+// ---> here the wp_enque_scripts will execute the function above
 add_action( 'wp_enqueue_scripts', 'orbisius_ct_rest_abracadabra_child_theme_enqueue_styles' );
-
-/**
- *  Testing, testing
- **/
